@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="https://placehold.co/150x150/0D9488/FFFFFF?text=AI+Assistant" alt="App Logo" width="150"/>
-
 <h1 align="center">Smart Medication Assistant</h1>
 
 <p align="center">
@@ -35,12 +33,6 @@ Unleash the power of intelligent healthcare with the Smart Medication Assistant!
 
 💡 About The Project: From Idea to Reality
 Welcome to the future of personal healthcare management! The Smart Medication Assistant is not just an application; it's a digital bridge connecting patients and doctors in a seamless, intelligent ecosystem. We believe that adherence to medication should be effortless, and medical communication should be crystal clear. This project was born from the spark of inspiration to create a tool that simplifies complex routines and fosters stronger patient-doctor relationships, all while leveraging the power of Artificial Intelligence.
-
-<p align="center">
-<img src="https://placehold.co/400x200/0D9488/FFFFFF?text=App+Screenshot" alt="App Screenshot" width="400"/>
-<br/>
-<em></em>
-</p>
 
 This project was built with passion and precision using these core technologies:
 
@@ -165,7 +157,7 @@ Chat History: Your conversation history is stored within your Firebase project a
 🤝 Contributing
 Contributions make the open-source community an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also open an issue with the tag "enhancement".
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also open an issue or submit a pull request.
 
 Fork the Project
 
@@ -200,12 +192,6 @@ Distributed under the MIT License. See LICENSE for more information.
 
 💡 عن المشروع: من الفكرة إلى الواقع
 مرحبًا بك في مستقبل إدارة الرعاية الصحية الشخصية! مساعدك الدوائي الذكي ليس مجرد تطبيق؛ إنه جسر رقمي يربط المرضى والأطباء في نظام بيئي سلس وذكي. نحن نؤمن بأن الالتزام بالأدوية يجب أن يكون سهلاً، وأن التواصل الطبي يجب أن يكون واضحًا تمامًا. وُلد هذا المشروع من شرارة الإلهام لإنشاء أداة تبسط الروتين المعقد وتعزز العلاقات الأقوى بين المريض والطبيب، كل ذلك مع الاستفادة من قوة الذكاء الاصطناعي.
-
-<p align="center">
-<img src="https://placehold.co/400x200/0D9488/FFFFFF?text=لقطة+شاشة+للتطبيق" alt="App Screenshot" width="400"/>
-<br/>
-<em>[صورة: لقطة شاشة للتطبيق]</em>
-</p>
 
 تم بناء هذا المشروع بشغف ودقة باستخدام هذه التقنيات الأساسية:
 
@@ -300,7 +286,7 @@ cd YOUR_REPOSITORY_NAME
 
 الخيار الموصى به (إضافة Live Server لـ VS Code): افتح مجلد المشروع في Visual Studio Code، انقر بزر الماوس الأيمن على endex.html، واختر "Open with Live Server".
 
-بديل (خادم HTTP بسيط من Python):
+بديل (خادم Python بسيط):
 
 python -m http.server 5500
 # أو
