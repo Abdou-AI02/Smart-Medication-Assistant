@@ -1,103 +1,77 @@
-Smart Medication Assistant: Your AI-Powered Health Companion
+<div align="center">
+
+<img src="https://placehold.co/150x150/0D9488/FFFFFF?text=AI+Assistant" alt="App Logo" width="150"/>
+
+<h1 align="center">Smart Medication Assistant</h1>
+
+<p align="center">
+Your AI-Powered Health Companion for seamless medication management and doctor-patient communication.
+<br />
+<a href="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/issues">Report a Bug</a>
+·
+<a href="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/issues">Request a Feature</a>
+</p>
+</div>
+
+<div align="center">
+
+</div>
+
+<details>
+<summary>🇬🇧 Click here for the English Version</summary>
+
+<div align="center">
+
+<h1 align="center">Smart Medication Assistant: Your AI-Powered Health Companion</h1>
+
+<p align="center">
 Unleash the power of intelligent healthcare with the Smart Medication Assistant! This innovative web application is meticulously crafted to revolutionize how patients manage their medications and connect with their doctors. Experience a future where adherence is effortless and communication is seamless, all powered by cutting-edge AI.
+<br />
+<a href="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/issues">Report a Bug</a>
+·
+<a href="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/issues">Request a Feature</a>
+</p>
+</div>
 
-✨ Key Features
-Intelligent Patient Medication Management: 💊
+💡 About The Project: From Idea to Reality
+Welcome to the future of personal healthcare management! The Smart Medication Assistant is not just an application; it's a digital bridge connecting patients and doctors in a seamless, intelligent ecosystem. We believe that adherence to medication should be effortless, and medical communication should be crystal clear. This project was born from the spark of inspiration to create a tool that simplifies complex routines and fosters stronger patient-doctor relationships, all while leveraging the power of Artificial Intelligence.
 
-Effortlessly add and track medications with precise dosages, times, and personalized instructions.
+<p align="center">
+<img src="https://placehold.co/400x200/0D9488/FFFFFF?text=App+Screenshot" alt="App Screenshot" width="400"/>
+<br/>
+<em></em>
+</p>
 
-Digitally archive past medications and access a comprehensive historical record.
+This project was built with passion and precision using these core technologies:
 
-Activate smart reminders for medication times, ensuring no dose is missed (experimental feature).
+Frontend: HTML5, Tailwind CSS, JavaScript, Chart.js, jsPDF, QR Code Generator, jsQR, DOMPurify.
 
-Gain clarity with AI-powered medication explanations (Gemini AI), transforming complex medical jargon into easy-to-understand insights.
+Backend & Database: Firebase Authentication, Cloud Firestore, Firebase Storage.
 
-Doctor's Intuitive Dashboard: 🧑‍⚕️
+Artificial Intelligence: Google Gemini API.
 
-Access a streamlined list of all linked patients.
+🚀 Getting Started
+To get a local copy up and running, follow these simple steps.
 
-Initiate secure linking requests to patients using their unique sharing code (UID).
+Prerequisites
+You need to have the following installed:
 
-Directly add and modify medications for their patients with precision.
+Git
 
-Monitor vital patient and prescribed medication statistics through insightful analytics.
+Node.js (for potential future backend functions, though not strictly required for this frontend-only setup)
 
-Seamless & Secure Communication: 💬
+Python (for a simple local server alternative)
 
-Engage in real-time chat with patients, fostering immediate support and guidance.
+Installation
+Get a free Firebase project and configure your web app.
 
-Securely attach and share essential files within chat conversations.
+Go to Firebase Console.
 
-Prioritize urgent patient needs with categorized messages (normal, urgent, emergency) for prompt alerts.
+Create a new project.
 
-Advanced Account Management: ⚙️
+Add a web app to your project and copy your firebaseConfig object.
 
-Streamlined login and registration for both patients and doctors with distinct roles.
-
-Effortless password reset functionality.
-
-Personalized profile updates (name, age, health conditions, specialty).
-
-Enhanced security with simulated Two-Factor Authentication (2FA) using QR codes.
-
-Empower patients to provide valuable feedback through doctor ratings.
-
-Adaptive & Elegant Design: 📱💻
-
-Enjoy a fluid and responsive experience across all devices (mobile, tablet, desktop).
-
-Personalize your interface with a comfortable Dark Mode toggle.
-
-🚀 Technologies Used
-Frontend:
-
-HTML5
-
-Tailwind CSS (for rapid and responsive design)
-
-JavaScript (application logic)
-
-Chart.js (for charts and statistics)
-
-jsPDF (for exporting documents, available but not explicitly used currently)
-
-QR Code Generator (for generating QR codes for 2FA)
-
-jsQR (for reading QR codes, available but not explicitly used currently)
-
-DOMPurify (for sanitizing user-generated content)
-
-Backend & Database:
-
-Firebase Authentication: For user registration and login management.
-
-Cloud Firestore: Real-time NoSQL database for storing user data, medications, linking requests, and chats.
-
-Firebase Storage: For storing attached files in chats.
-
-Artificial Intelligence (AI):
-
-Google Gemini API: For explaining medication information to patients (via a secure backend).
-
-🛠️ Setup and Local Run
-To run this application locally, follow these steps:
-
-Clone the repository:
-
-git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git
-cd YOUR_REPOSITORY_NAME
-
-(Replace YOUR_USERNAME and YOUR_REPOSITORY_NAME with your repository details).
-
-Firebase Setup:
-
-Go to Firebase Console and create a new project.
-
-Add a web app to your project.
-
-Copy the firebaseConfig provided by Firebase (includes apiKey, authDomain, projectId, storageBucket, messagingSenderId, appId).
-
-Open endex.html and find the firebaseConfig object. Update the values with your project's values from the Firebase Console.
+Open endex.html and paste your firebaseConfig details into the firebaseConfig constant.
 
 const firebaseConfig = {
     apiKey: "YOUR_API_KEY",
@@ -108,68 +82,35 @@ const firebaseConfig = {
     appId: "YOUR_APP_ID"
 };
 
-Firestore Rules:
+Configure Firebase Security Rules for Firestore and Storage. Ensure they are secure (e.g., only authenticated users can read/write their own data, and public data is accessible only by authenticated users). Refer to the Firestore Rules and Firebase Storage Rules sections in the Arabic part of this README for examples.
 
-In Firebase Console, navigate to Firestore Database -> Rules.
+Setup CORS for Firebase Storage. If you're running locally, ensure your cors.json file is configured and applied to your Firebase Storage bucket using gsutil cors set cors.json gs://YOUR_STORAGE_BUCKET_NAME.
 
-Ensure you have security rules that allow read and write access for authenticated users.
+Get a Gemini API Key and set up a secure backend endpoint.
 
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /artifacts/{appId}/users/{userId}/{documents=**} {
-      allow read, write: if request.auth != null && request.auth.uid == userId;
-    }
-    match /artifacts/{appId}/public/data/{documents=**} {
-      allow read, write: if request.auth != null;
-    }
-  }
-}
+Obtain a Gemini API key from Google AI Studio.
 
-Indexes: If you encounter query errors (especially those combining where and orderBy), you will need to create custom indexes. The Firebase Console will provide direct links to create these indexes. You can also update the firestore.indexes.json file and deploy it using the Firebase CLI.
+Crucially, this key must be stored on a secure backend (e.g., Firebase Cloud Function). Your frontend will call this backend endpoint, which then uses the key to interact with Gemini AI.
 
-Firebase Storage Rules (for chat file uploads):
+Update the backendEndpoint variable in endex.html with the URL of your deployed backend function.
 
-In Firebase Console, navigate to Storage -> Rules.
+const backendEndpoint = 'YOUR_FIREBASE_CLOUD_FUNCTION_URL/explainMedication'; // Replace this with your cloud function URL
 
-Ensure you have a rule that allows authenticated users to upload and read files in the chat_files path:
+Clone the repository:
 
-rules_version = '2';
-service firebase.storage {
-  match /b/{bucket}/o {
-    match /chat_files/{chatId}/{fileName} {
-      allow read, write: if request.auth != null;
-    }
-  }
-}
+git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git
 
-Setup CORS for Firebase Storage:
+(Replace YOUR_USERNAME and YOUR_REPOSITORY_NAME with your actual GitHub username and repository name).
 
-To allow file uploads from your local server, you will need to configure CORS on your storage bucket.
+Navigate into the project directory:
 
-Ensure your cors.json file is in your project folder.
+cd YOUR_REPOSITORY_NAME
 
-Use the Google Cloud SDK to apply the CORS settings to your storage bucket (replace YOUR_STORAGE_BUCKET_NAME with your bucket name from firebaseConfig):
+Run the application locally:
 
-gsutil cors set cors.json gs://YOUR_STORAGE_BUCKET_NAME
+Recommended (Live Server extension for VS Code): Open the project folder in Visual Studio Code, right-click endex.html, and select "Open with Live Server".
 
-Setup Gemini API Key (Backend):
-
-Important Security Note: In a production environment, you should never expose your Gemini API key directly in client-side code. It must be securely stored on a server-side backend (e.g., Firebase Cloud Functions) and all Gemini API calls should be proxied through this backend.
-
-For local development, you can obtain a Gemini API key from Google AI Studio.
-
-You will need to set up a backend (e.g., a Firebase Cloud Function) that receives requests from your frontend, makes the Gemini API call using the securely stored key, and returns the result. Update the backendEndpoint variable in endex.html with the URL of your deployed backend function.
-
-const backendEndpoint = 'YOUR_FIREBASE_CLOUD_FUNCTION_URL/explainMedication'; // Replace with your cloud function URL
-
-Run the Application:
-
-endex.html cannot be run directly in the browser due to browser security restrictions (CORS) when accessing Firebase and Gemini API.
-
-Recommended Option: Use the "Live Server" extension in Visual Studio Code. Open your project folder in VS Code, then right-click on endex.html and select "Open with Live Server".
-
-Alternative (Simple Python Server): In your terminal within the project folder, you can run a simple web server:
+Alternative (Simple Python HTTP Server):
 
 python -m http.server 5500
 # or
@@ -177,112 +118,125 @@ python3 -m http.server 5500
 
 Then open your browser and navigate to http://localhost:5500/endex.html.
 
+💡 Usage
+Once the application is running, you can interact with it using the following commands/actions:
+
+Select Role: Choose to log in as a Patient or a Doctor from the home screen.
+
+Authentication: Sign up for a new account or log in with existing credentials.
+
+Patient Dashboard:
+
+My Medications: Add new drugs, track dosages, set times, and view instructions. Mark doses as taken and archive old medications.
+
+Medication History: Review all archived medications.
+
+My Doctors: View linked doctors, initiate chats, and submit ratings.
+
+My Profile: Update personal information and share your unique UID with doctors.
+
+Connection Requests: Accept or decline linking requests from doctors.
+
+Doctor Dashboard:
+
+My Patients: View linked patients, access their details, and manage their medications.
+
+Send Linking Request: Request to link with a new patient using their UID.
+
+My Profile: Update your professional details.
+
+Statistics: View insightful charts on patient and medication data.
+
+Chat Feature: Engage in real-time secure messaging with linked users, attach files, and set message urgency.
+
+AI Explanation: Get instant, simplified explanations for medications using AI.
+
+🔒 Privacy Policy
+Your privacy is critically important.
+
+API Keys & Sensitive Data: Gemini API key is securely stored on the backend and never exposed client-side. Firebase configuration is publicly accessible but protected by robust Firebase Security Rules.
+
+User Data: Patient and doctor data (e.g., medications, profile info) is stored in Cloud Firestore and secured by Firebase Security Rules, ensuring only authorized users (the user themselves or linked doctors/patients) can access relevant information.
+
+Chat History: Your conversation history is stored within your Firebase project and secured by Firestore rules. Files shared in chat are stored in Firebase Storage.
+
+2FA Simulation: The 2FA feature is a simulation for demonstration purposes. A real-world 2FA implementation requires server-side secret generation and verification.
+
 🤝 Contributing
-We welcome contributions! If you have suggestions or improvements, feel free to open an issue or submit a pull request.
+Contributions make the open-source community an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also open an issue with the tag "enhancement".
+
+Fork the Project
+
+Create your Feature Branch (git checkout -b feature/AmazingFeature)
+
+Commit your Changes (git commit -m 'Add some AmazingFeature')
+
+Push to the Branch (git push origin feature/AmazingFeature)
+
+Open a Pull Request
 
 📄 License
-This project is licensed under the MIT License. See the LICENSE file for more details.
+Distributed under the MIT License. See LICENSE for more information.
 
-مساعدك الدوائي الذكي: رفيقك الصحي المدعوم بالذكاء الاصطناعي
+</details>
+
+<details>
+<summary>🇸🇦 انقر هنا للنسخة العربية</summary>
+
+<div dir="rtl" align="right">
+
+<h1 align="center">مساعدك الدوائي الذكي: رفيقك الصحي المدعوم بالذكاء الاصطناعي</h1>
+
+<p align="center">
 أطلق العنان لقوة الرعاية الصحية الذكية مع مساعدك الدوائي الذكي! هذا التطبيق المبتكر مصمم بعناية فائقة لإحداث ثورة في كيفية إدارة المرضى لأدويتهم والتواصل مع أطبائهم. اختبر مستقبلًا يصبح فيه الالتزام بالعلاج سهلاً والتواصل سلساً، كل ذلك بفضل قوة الذكاء الاصطناعي المتطورة.
+<br />
+<a href="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/issues">الإبلاغ عن خطأ</a>
+·
+<a href="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/issues">طلب ميزة جديدة</a>
+</p>
+</div>
 
-✨ الميزات الرئيسية
-إدارة الأدوية الذكية للمرضى: 💊
+💡 عن المشروع: من الفكرة إلى الواقع
+مرحبًا بك في مستقبل إدارة الرعاية الصحية الشخصية! مساعدك الدوائي الذكي ليس مجرد تطبيق؛ إنه جسر رقمي يربط المرضى والأطباء في نظام بيئي سلس وذكي. نحن نؤمن بأن الالتزام بالأدوية يجب أن يكون سهلاً، وأن التواصل الطبي يجب أن يكون واضحًا تمامًا. وُلد هذا المشروع من شرارة الإلهام لإنشاء أداة تبسط الروتين المعقد وتعزز العلاقات الأقوى بين المريض والطبيب، كل ذلك مع الاستفادة من قوة الذكاء الاصطناعي.
 
-أضف وتتبع الأدوية بسهولة مع الجرعات الدقيقة، المواعيد، والتعليمات الشخصية.
+<p align="center">
+<img src="https://placehold.co/400x200/0D9488/FFFFFF?text=لقطة+شاشة+للتطبيق" alt="App Screenshot" width="400"/>
+<br/>
+<em>[صورة: لقطة شاشة للتطبيق]</em>
+</p>
 
-أرشفة الأدوية القديمة رقميًا والوصول إلى سجل تاريخي شامل.
+تم بناء هذا المشروع بشغف ودقة باستخدام هذه التقنيات الأساسية:
 
-تفعيل التنبيهات الذكية لمواعيد الدواء، لضمان عدم تفويت أي جرعة (ميزة تجريبية).
+الواجهة الأمامية: HTML5، Tailwind CSS، JavaScript، Chart.js، jsPDF، QR Code Generator، jsQR، DOMPurify.
 
-احصل على وضوح تام مع شرح الأدوية المدعوم بالذكاء الاصطناعي (Gemini AI)، لتحويل المصطلحات الطبية المعقدة إلى رؤى سهلة الفهم.
+الواجهة الخلفية وقاعدة البيانات: Firebase Authentication، Cloud Firestore، Firebase Storage.
 
-لوحة تحكم الطبيب البديهية: 🧑‍⚕️
+الذكاء الاصطناعي: Google Gemini API.
 
-الوصول إلى قائمة مبسطة بجميع المرضى المرتبطين.
+🚀 البدء
+للحصول على نسخة محلية من المشروع وتشغيلها، اتبع هذه الخطوات البسيطة.
 
-بدء طلبات ربط آمنة للمرضى باستخدام رمز المشاركة الفريد الخاص بهم (UID).
+المتطلبات الأساسية
+يجب أن يكون لديك ما يلي مثبتًا:
 
-إضافة وتعديل الأدوية لمرضاهم مباشرةً وبدقة.
+Git
 
-مراقبة إحصائيات المرضى والأدوية الموصوفة الهامة من خلال تحليلات ثاقبة.
+Node.js (للوظائف الخلفية المحتملة في المستقبل، على الرغم من أنها ليست مطلوبة بشدة لإعداد الواجهة الأمامية فقط)
 
-تواصل سلس وآمن: 💬
+Python (لخادم محلي بسيط بديل)
 
-إجراء محادثات فورية في الوقت الفعلي مع المرضى، لتقديم الدعم والإرشاد الفوري.
+التثبيت
+احصل على مشروع Firebase مجاني وقم بتكوين تطبيق الويب الخاص بك.
 
-إرفاق ومشاركة الملفات الأساسية بشكل آمن ضمن محادثات الدردشة.
+اذهب إلى وحدة تحكم Firebase.
 
-تحديد أولويات احتياجات المرضى العاجلة برسائل مصنفة (عادية، عاجلة، طارئة) للتنبيهات الفورية.
+أنشئ مشروعًا جديدًا.
 
-إدارة حساب متقدمة: ⚙️
+أضف تطبيق ويب إلى مشروعك وانسخ كائن firebaseConfig الخاص بك.
 
-تسجيل دخول وتسجيل مبسط لكل من المرضى والأطباء بأدوار منفصلة.
-
-وظيفة إعادة تعيين كلمة المرور بسهولة.
-
-تحديثات الملف الشخصي المخصصة (الاسم، العمر، الحالات الصحية، التخصص).
-
-أمان معزز مع المصادقة الثنائية (2FA) المحاكية باستخدام رموز QR.
-
-تمكين المرضى من تقديم ملاحظات قيمة من خلال تقييم الأطباء.
-
-تصميم متكيف وأنيق: 📱💻
-
-استمتع بتجربة سلسة ومتجاوبة عبر جميع الأجهزة (الجوال، التابلت، سطح المكتب).
-
-خصص واجهتك مع خيار الوضع الداكن المريح.
-
-🚀 التقنيات المستخدمة
-الواجهة الأمامية (Frontend):
-
-HTML5
-
-Tailwind CSS (للتصميم السريع والمتجاوب)
-
-JavaScript (منطق التطبيق)
-
-Chart.js (للرسوم البيانية والإحصائيات)
-
-jsPDF (لتصدير المستندات، متاح ولكن غير مستخدم حالياً بشكل صريح)
-
-QR Code Generator (لتوليد رموز QR للمصادقة الثنائية)
-
-jsQR (لقراءة رموز QR، متاح ولكن غير مستخدم حالياً بشكل صريح)
-
-DOMPurify (لتنقية المحتوى الذي ينشئه المستخدم)
-
-الواجهة الخلفية (Backend) وقاعدة البيانات:
-
-Firebase Authentication: لإدارة تسجيل المستخدمين وتسجيل الدخول.
-
-Cloud Firestore: قاعدة بيانات NoSQL في الوقت الفعلي لتخزين بيانات المستخدمين، الأدوية، طلبات الربط، والدردشات.
-
-Firebase Storage: لتخزين الملفات المرفقة في الدردشات.
-
-الذكاء الاصطناعي (AI):
-
-Google Gemini API: لشرح معلومات الأدوية للمرضى (عبر واجهة خلفية آمنة).
-
-🛠️ الإعداد والتشغيل المحلي
-لتشغيل هذا التطبيق محليًا، اتبع الخطوات التالية:
-
-استنساخ المستودع (Clone the repository):
-
-git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git
-cd YOUR_REPOSITORY_NAME
-
-(استبدل YOUR_USERNAME و YOUR_REPOSITORY_NAME بتفاصيل مستودعك).
-
-إعداد Firebase:
-
-انتقل إلى Firebase Console وأنشئ مشروعًا جديدًا.
-
-أضف تطبيق ويب إلى مشروعك.
-
-انسخ firebaseConfig الذي يوفره Firebase (يتضمن apiKey, authDomain, projectId, storageBucket, messagingSenderId, appId).
-
-افتح ملف endex.html وابحث عن الكائن firebaseConfig. قم بتحديث القيم بالقيم الخاصة بمشروعك من Firebase Console.
+افتح ملف endex.html والصق تفاصيل firebaseConfig الخاصة بك في ثابت firebaseConfig.
 
 const firebaseConfig = {
     apiKey: "YOUR_API_KEY",
@@ -293,11 +247,9 @@ const firebaseConfig = {
     appId: "YOUR_APP_ID"
 };
 
+تكوين قواعد أمان Firebase لـ Firestore و Storage. تأكد من أنها آمنة (على سبيل المثال، يمكن للمستخدمين المصادق عليهم فقط قراءة/كتابة بياناتهم الخاصة، ويمكن الوصول إلى البيانات العامة فقط من قبل المستخدمين المصادق عليهم). إليك أمثلة:
+
 قواعد Firestore:
-
-في Firebase Console، انتقل إلى Firestore Database -> Rules.
-
-تأكد من أن لديك قواعد أمان تسمح بالقراءة والكتابة للمستخدمين المصادق عليهم.
 
 rules_version = '2';
 service cloud.firestore {
@@ -311,13 +263,7 @@ service cloud.firestore {
   }
 }
 
-الفهارس: إذا واجهت أخطاء في الاستعلامات (خاصة تلك التي تجمع بين where و orderBy)، فستحتاج إلى إنشاء فهارس مخصصة. سيوفر لك Firebase Console روابط مباشرة لإنشاء هذه الفهارس. يمكنك أيضًا تحديث ملف firestore.indexes.json ونشره باستخدام Firebase CLI.
-
 قواعد Firebase Storage (لتحميل الملفات في الدردشة):
-
-في Firebase Console، انتقل إلى Storage -> Rules.
-
-تأكد من أن لديك قاعدة تسمح للمستخدمين المصادق عليهم بتحميل وقراءة الملفات في مسار chat_files:
 
 rules_version = '2';
 service firebase.storage {
@@ -328,33 +274,33 @@ service firebase.storage {
   }
 }
 
-إعداد CORS لتخزين Firebase:
+إعداد CORS لتخزين Firebase. إذا كنت تقوم بالتشغيل محليًا، تأكد من تكوين ملف cors.json وتطبيقه على سجل تخزين Firebase الخاص بك باستخدام gsutil cors set cors.json gs://YOUR_STORAGE_BUCKET_NAME.
 
-للسماح بتحميل الملفات من خادمك المحلي، ستحتاج إلى تكوين CORS على سجل التخزين الخاص بك.
+احصل على مفتاح Gemini API وقم بإعداد نقطة نهاية خلفية آمنة.
 
-تأكد من أن ملف cors.json الخاص بك موجود في مجلد المشروع.
+احصل على مفتاح Gemini API من Google AI Studio.
 
-استخدم Google Cloud SDK لتطبيق إعدادات CORS على سجل التخزين الخاص بك (استبدل YOUR_STORAGE_BUCKET_NAME باسم سجل التخزين الخاص بك من firebaseConfig):
+من الأهمية بمكان أن يتم تخزين هذا المفتاح على واجهة خلفية آمنة (مثل Firebase Cloud Function). ستقوم واجهتك الأمامية باستدعاء نقطة النهاية الخلفية هذه، والتي ستستخدم المفتاح المخزن بأمان للتفاعل مع Gemini AI.
 
-gsutil cors set cors.json gs://YOUR_STORAGE_BUCKET_NAME
-
-إعداد Gemini API Key (الواجهة الخلفية):
-
-ملاحظة أمنية هامة: في بيئة الإنتاج، يجب ألا تعرض مفتاح Gemini API الخاص بك مباشرةً في الكود جانب العميل. يجب أن يتم تخزينه بشكل آمن على خادم خلفي (مثل Firebase Cloud Functions) وأن يتم إجراء جميع استدعاءات Gemini API من خلال هذا الخادم.
-
-للتطوير المحلي، يمكنك الحصول على مفتاح Gemini API من Google AI Studio.
-
-ستحتاج إلى إعداد واجهة خلفية (مثل Firebase Cloud Function) تتلقى الطلبات من واجهتك الأمامية، وتقوم باستدعاء Gemini API باستخدام المفتاح المخزن بأمان، ثم تعيد النتيجة. قم بتحديث متغير backendEndpoint في endex.html بعنوان URL لوظيفتك الخلفية المنشورة.
+قم بتحديث متغير backendEndpoint في endex.html بعنوان URL لوظيفتك الخلفية المنشورة.
 
 const backendEndpoint = 'YOUR_FIREBASE_CLOUD_FUNCTION_URL/explainMedication'; // استبدل هذا بعنوان URL لوظيفتك السحابية
 
-تشغيل التطبيق:
+استنساخ المستودع:
 
-لا يمكن تشغيل ملف endex.html مباشرةً في المتصفح بسبب قيود أمان المتصفح (CORS) عند الوصول إلى Firebase وGemini API.
+git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git
 
-الخيار الموصى به: استخدم إضافة "Live Server" في Visual Studio Code. افتح مجلد المشروع في VS Code، ثم انقر بزر الماوس الأيمن على endex.html واختر "Open with Live Server".
+(استبدل YOUR_USERNAME و YOUR_REPOSITORY_NAME باسم مستخدم GitHub الخاص بك واسم المستودع).
 
-بديل (خادم Python بسيط): في الطرفية داخل مجلد المشروع، يمكنك تشغيل خادم ويب بسيط:
+انتقل إلى دليل المشروع:
+
+cd YOUR_REPOSITORY_NAME
+
+تشغيل التطبيق محليًا:
+
+الخيار الموصى به (إضافة Live Server لـ VS Code): افتح مجلد المشروع في Visual Studio Code، انقر بزر الماوس الأيمن على endex.html، واختر "Open with Live Server".
+
+بديل (خادم HTTP بسيط من Python):
 
 python -m http.server 5500
 # أو
@@ -362,8 +308,66 @@ python3 -m http.server 5500
 
 ثم افتح متصفحك وانتقل إلى http://localhost:5500/endex.html.
 
-🤝 Contributing
-We welcome contributions! If you have suggestions or improvements, feel free to open an issue or submit a pull request.
+💡 الاستخدام
+بمجرد تشغيل التطبيق، يمكنك التفاعل معه باستخدام الأوامر/الإجراءات التالية:
 
-📄 License
-This project is licensed under the MIT License. See the LICENSE file for more details.
+تحديد الدور: اختر تسجيل الدخول كمريض أو طبيب من الشاشة الرئيسية.
+
+المصادقة: سجل للحصول على حساب جديد أو سجل الدخول باستخدام بيانات الاعتماد الموجودة.
+
+لوحة تحكم المريض:
+
+أدويتي: أضف أدوية جديدة، وتتبع الجرعات، واضبط المواعيد، واعرض التعليمات. ضع علامة على الجرعات التي تم تناولها وأرشفة الأدوية القديمة.
+
+سجل الأدوية: راجع جميع الأدوية المؤرشفة.
+
+أطبائي: اعرض الأطباء المرتبطين بك، وابدأ محادثات معهم، وقدم تقييمات.
+
+ملفي الشخصي: قم بتحديث معلوماتك الشخصية وشارك معرف المستخدم الفريد (UID) الخاص بك مع الأطباء.
+
+طلبات الربط: اقبل أو ارفض طلبات الربط من الأطباء.
+
+لوحة تحكم الطبيب:
+
+مرضاي: اعرض المرضى المرتبطين، وادخل إلى تفاصيلهم، وقم بإدارة أدويتهم.
+
+إرسال طلب ربط: اطلب الربط بمريض جديد باستخدام معرف المستخدم الخاص به.
+
+ملفي الشخصي: قم بتحديث تفاصيلك المهنية.
+
+الإحصائيات: اعرض رسومًا بيانية ثاقبة حول بيانات المرضى والأدوية.
+
+ميزة الدردشة: شارك في المراسلة الآمنة في الوقت الفعلي مع المستخدمين المرتبطين، وقم بإرفاق الملفات، واضبط أهمية الرسالة.
+
+شرح الذكاء الاصطناعي: احصل على تفسيرات فورية ومبسطة للأدوية باستخدام الذكاء الاصطناعي.
+
+🔒 سياسة الخصوصية
+خصوصيتك مهمة للغاية.
+
+مفاتيح API والبيانات الحساسة: يتم تخزين مفتاح Gemini API بشكل آمن على الواجهة الخلفية ولا يتم كشفه أبدًا لجانب العميل. يمكن الوصول إلى تكوين Firebase بشكل عام ولكنه محمي بقواعد أمان Firebase القوية.
+
+بيانات المستخدم: يتم تخزين بيانات المريض والطبيب (مثل الأدوية ومعلومات الملف الشخصي) في Cloud Firestore وتأمينها بواسطة قواعد أمان Firebase، مما يضمن أن المستخدمين المصرح لهم فقط (المستخدمون أنفسهم أو الأطباء/المرضى المرتبطون) يمكنهم الوصول إلى المعلومات ذات الصلة.
+
+سجل الدردشة: يتم تخزين سجل المحادثات الخاص بك داخل مشروع Firebase الخاص بك وتأمينه بواسطة قواعد Firestore. يتم تخزين الملفات المشتركة في الدردشة في Firebase Storage.
+
+محاكاة المصادقة الثنائية: ميزة المصادقة الثنائية هي محاكاة لأغراض العرض التوضيحي. يتطلب تطبيق المصادقة الثنائية في العالم الحقيقي إنشاء سر والتحقق منه على جانب الخادم.
+
+🤝 المساهمة
+نرحب بالمساهمات! مجتمع المصادر المفتوحة هو مكان رائع للتعلم والإلهام والإبداع. أي مساهمات تقدمها هي محل تقدير كبير.
+
+إذا كان لديك اقتراح من شأنه أن يجعل هذا أفضل، فلا تتردد في عمل تفرع للمستودع وإنشاء طلب سحب. يمكنك أيضاً فتح مشكلة بالعلامة "تحسين".
+
+تفرع المشروع (Fork the Project)
+
+أنشئ فرع الميزة الخاص بك (git checkout -b feature/AmazingFeature)
+
+التزم بتغييراتك (git commit -m 'Add some AmazingFeature')
+
+ادفع إلى الفرع (git push origin feature/AmazingFeature)
+
+افتح طلب سحب (Open a Pull Request)
+
+📄 الترخيص
+هذا المشروع مرخص بموجب ترخيص MIT. انظر LICENSE للمزيد من التفاصيل.
+
+</details>
