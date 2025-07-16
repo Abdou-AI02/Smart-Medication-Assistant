@@ -184,9 +184,9 @@ Distributed under the MIT License. See LICENSE for more information.
 <p align="center">
 أطلق العنان لقوة الرعاية الصحية الذكية مع مساعدك الدوائي الذكي! هذا التطبيق المبتكر مصمم بعناية فائقة لإحداث ثورة في كيفية إدارة المرضى لأدويتهم والتواصل مع أطبائهم. اختبر مستقبلًا يصبح فيه الالتزام بالعلاج سهلاً والتواصل سلساً، كل ذلك بفضل قوة الذكاء الاصطناعي المتطورة.
 <br />
-<a href="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/issues">الإبلاغ عن خطأ</a>
+<a href="https://github.com/Abdou-AI02/Smart-Medication-Assistant">الإبلاغ عن خطأ</a>
 ·
-<a href="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/issues">طلب ميزة جديدة</a>
+<a href="https://github.com/Abdou-AI02/Smart-Medication-Assistant">طلب ميزة جديدة</a>
 </p>
 </div>
 
