@@ -5,9 +5,9 @@
 <p align="center">
 Your AI-Powered Health Companion for seamless medication management and doctor-patient communication.
 <br />
-<a href="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/issues">Report a Bug</a>
+<a href="https://github.com/Abdou-AI02/Smart-Medication-Assistant">Report a Bug</a>
 ·
-<a href="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/issues">Request a Feature</a>
+<a href="https://github.com/Abdou-AI02/Smart-Medication-Assistant">Request a Feature</a>
 </p>
 </div>
 
@@ -25,9 +25,9 @@ Your AI-Powered Health Companion for seamless medication management and doctor-p
 <p align="center">
 Unleash the power of intelligent healthcare with the Smart Medication Assistant! This innovative web application is meticulously crafted to revolutionize how patients manage their medications and connect with their doctors. Experience a future where adherence is effortless and communication is seamless, all powered by cutting-edge AI.
 <br />
-<a href="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/issues">Report a Bug</a>
+<a href="https://github.com/Abdou-AI02/Smart-Medication-Assistant">Report a Bug</a>
 ·
-<a href="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/issues">Request a Feature</a>
+<a href="https://github.com/Abdou-AI02/Smart-Medication-Assistant">Request a Feature</a>
 </p>
 </div>
 
